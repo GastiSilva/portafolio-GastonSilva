@@ -6,7 +6,7 @@ import './App.css'
 
 function App() {
   return (
-    <div className='min-h-screen bg-[#F0F1C5]'>
+    <div className='min-h-screen bg-[#F0F2BD]'>
       <AppRouter />
     </div>
   );

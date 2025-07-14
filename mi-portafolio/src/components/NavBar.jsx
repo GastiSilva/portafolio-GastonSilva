@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50 bg-[#73946B]">
+    <header className="sticky top-0 z-50 shadow-md bg-[#708A58]">
       <nav className="container mx-auto flex justify-between items-center px-4 py-3">
         {/* Enlaces de navegación */}
         <div className="space-x-4">
@@ -12,7 +12,7 @@ export default function Navbar() {
             className={({ isActive }) =>
               isActive
                 ? 'font-semibold'
-                : 'text-gray-600 hover:transition'
+                : 'text-white hover:transition'
             }
           >
             Inicio
@@ -22,7 +22,7 @@ export default function Navbar() {
             className={({ isActive }) =>
               isActive
                 ? 'font-semibold'
-                : 'text-gray-600 hover:transition'
+                : 'text-white hover:transition'
             }
           >
             Proyectos
@@ -32,7 +32,7 @@ export default function Navbar() {
             className={({ isActive }) =>
               isActive
                 ? 'font-semibold'
-                : 'text-gray-600 hover:transition'
+                : 'text-white hover:transition'
             }
           >
             Contacto
