@@ -1,22 +1,44 @@
-import MainLayout from "../layouts/MainLayout"
+import { Link } from 'react-router-dom'
+import MainLayout from '../layouts/MainLayout'
+import { useLanguage } from '../context/LanguageContext'
 
 export default function Home() {
+  const { t } = useLanguage()
+
   return (
     <MainLayout>
-      <div className="flex flex-col justify-center items-center text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">
-        Gastón Silva Gallaratto
-      </h1>
-      <h2 className="text-xl md:text-2xl text-gray-600 mb-6">
-        Analista en sistemas | Desarrollador Full Stack
-      </h2>
-      <h3 className="text-bold text-lg">
-      Me gusta programar y conocer nuevas tecnologias, constantemente es muy interesante y desafiante para mi aprender y mejorar mis habilidades.
-      </h3>
-      <a href="/proyectos" className="text-white px-6 py-2 mt-8 rounded-md hover:bg-[#67AE6E] transition">
-        Ver mis proyectos
-      </a>
-    </div>
-     </MainLayout>
+      <div className="flex min-h-[70vh] flex-col items-center justify-center text-center">
+        <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-pitch-500/30 bg-pitch-50 px-3 py-1 text-xs font-medium text-pitch-700 dark:bg-pitch-500/10 dark:text-pitch-400">
+          <span className="h-1.5 w-1.5 rounded-full bg-pitch-500" />
+          {t('home.location')}
+        </span>
+
+        <p className="text-lg text-slate-500 dark:text-slate-400">{t('home.greeting')}</p>
+        <h1 className="font-display text-5xl font-bold text-slate-900 dark:text-white md:text-7xl">
+          {t('home.name')}
+        </h1>
+        <h2 className="mt-3 text-xl font-medium text-pitch-600 dark:text-pitch-400 md:text-2xl">
+          {t('home.role')}
+        </h2>
+        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-300">
+          {t('home.tagline')}
+        </p>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            to="/proyectos"
+            className="rounded-md bg-pitch-600 px-6 py-2.5 font-medium text-white transition hover:bg-pitch-700"
+          >
+            {t('home.ctaProjects')}
+          </Link>
+          <Link
+            to="/contacto"
+            className="rounded-md border border-slate-300 px-6 py-2.5 font-medium text-slate-700 transition hover:border-pitch-500 hover:text-pitch-600 dark:border-ink-800 dark:text-slate-200 dark:hover:text-pitch-400"
+          >
+            {t('home.ctaContact')}
+          </Link>
+        </div>
+      </div>
+    </MainLayout>
   )
 }

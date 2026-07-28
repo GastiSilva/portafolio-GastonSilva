@@ -1,16 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import AppRouter from './routes/router'
-import './App.css'
 
 function App() {
   return (
-    <div className='min-h-screen bg-[#F0F2BD]'>
+    <div className="min-h-screen bg-white text-slate-900 transition-colors dark:bg-ink-950 dark:text-slate-100">
       <AppRouter />
     </div>
-  );
+  )
 }
 
-export default App;
-
+export default App
