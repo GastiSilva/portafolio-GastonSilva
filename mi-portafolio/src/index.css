@@ -13,3 +13,15 @@
     font-family: 'Rajdhani', 'Inter', system-ui, sans-serif;
   }
 }
+
+@keyframes nebula-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(var(--drift-x, 20px), var(--drift-y, -15px), 0) scale(1.06);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
