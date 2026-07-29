@@ -1,11 +1,12 @@
 import MainLayout from '../layouts/MainLayout'
 import { useLanguage } from '../context/LanguageContext'
 
-const skillCategories = ['backend', 'frontend', 'gis', 'databases', 'infra', 'architecture']
+const skillCategories = ['backend', 'frontend', 'gis', 'databases', 'infra', 'architecture', 'languages']
 
 export default function SobreMi() {
   const { t } = useLanguage()
   const timeline = t('about.timeline')
+  const experience = t('about.experience')
 
   return (
     <MainLayout>
@@ -24,7 +25,9 @@ export default function SobreMi() {
             return (
               <div
                 key={cat}
-                className="rounded-xl border border-slate-200 p-4 dark:border-ink-800"
+                className={`rounded-xl border border-slate-200 p-4 dark:border-ink-800 ${
+                  cat === 'languages' ? 'sm:col-span-2' : ''
+                }`}
               >
                 <h4 className="text-sm font-semibold text-pitch-600 dark:text-pitch-400">{category.title}</h4>
                 <ul className="mt-2 flex flex-wrap gap-1.5">
@@ -41,7 +44,43 @@ export default function SobreMi() {
             )
           })}
         </div>
-        <p className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">{t('about.english')}</p>
+
+        <h3 className="mt-10 font-display text-xl font-bold text-slate-900 dark:text-white">
+          {t('about.experienceTitle')}
+        </h3>
+        <div className="mt-4 rounded-xl border border-slate-200 p-5 dark:border-ink-800">
+          <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h4 className="font-display text-lg font-bold text-slate-900 dark:text-white">{experience.role}</h4>
+            <span className="text-xs font-semibold uppercase tracking-wide text-pitch-600 dark:text-pitch-400">
+              {experience.period}
+            </span>
+          </div>
+          <p className="text-sm text-slate-500 dark:text-slate-400">{experience.company}</p>
+
+          <div className="mt-5 flex flex-col gap-5">
+            {experience.projects.map((project) => (
+              <div key={project.name}>
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <h5 className="font-semibold text-slate-900 dark:text-white">{project.name}</h5>
+                  {project.tag && (
+                    <span className="text-xs italic text-pitch-600 dark:text-pitch-400">{project.tag}</span>
+                  )}
+                </div>
+                <ul className="mt-2 flex flex-col gap-1.5">
+                  {project.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="flex gap-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300"
+                    >
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-pitch-500" />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <h3 className="mt-10 font-display text-xl font-bold text-slate-900 dark:text-white">
           {t('about.timelineTitle')}

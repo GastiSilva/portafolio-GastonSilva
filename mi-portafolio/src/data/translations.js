@@ -21,7 +21,7 @@ export const translations = {
     about: {
       title: 'Sobre mí',
       intro:
-        'Soy Analista de Sistemas y Full Stack Developer, enfocado en construir sistemas completos: desde el diseño de la base de datos hasta la experiencia final de quien usa el producto. Mi proyecto de tesis fue un sistema de gestión real para un negocio, liderando un equipo de 3 desarrolladores. Fuera del código sigo de cerca el fútbol, Star Wars y Marvel — probablemente por eso mis proyectos personales terminan siendo, sin planearlo, sobre fútbol.',
+        'Soy Full Stack Developer y Analista de Sistemas, con el backend como fuerte. Hoy soy Tech Lead de un equipo de 3 en el sector público, liderando el desarrollo de una plataforma geoespacial (GIS) para la Municipalidad de Córdoba. Lo que más me gusta de mi trabajo no es solo entregar features: es encontrar el problema antes de que explote — una vulnerabilidad que nadie reportó, un cuello de botella que iba a tirar abajo un sistema en producción, un bug fantasma que nadie más encontraba. Fuera del horario laboral hago lo mismo por gusto: diseño y despliego mis propios proyectos de punta a punta, como un ERP completo para un negocio de la industria alimenticia. También migré sistemas legacy enteros a arquitecturas modernas sin cortar el servicio ni un día. Fuera del código, el fútbol, Star Wars y Marvel ocupan el resto de mi cabeza.',
       skillsTitle: 'Stack técnico',
       skills: {
         backend: { title: 'Backend', items: ['Python (FastAPI)', 'Node.js (Express)', 'PHP (Laravel)'] },
@@ -33,8 +33,39 @@ export const translations = {
           title: 'Arquitectura y prácticas',
           items: ['Migración de sistemas legacy', 'APIs RESTful', 'Principios SOLID', 'Patrones de diseño'],
         },
+        languages: { title: 'Idiomas', items: ['Español (nativo)', 'Inglés (B1)'] },
       },
-      english: 'Inglés — B1',
+      experienceTitle: 'Experiencia',
+      experience: {
+        role: 'Programador Fullstack → Tech Lead',
+        company: 'Municipalidad de Córdoba — Secretaría de Ciudad Inteligente y Transformación Digital',
+        period: '2024 — Actualidad',
+        projects: [
+          {
+            name: 'Geoportal Municipal',
+            tag: 'Proyecto actual · Tech Lead de un equipo de 3 desarrolladores',
+            bullets: [
+              'Lo diseñé y lideré desde cero (Python/FastAPI + Vue 3/Quasar): hoy son 190+ capas publicadas y 103 endpoints REST en 14 módulos, usados por distintas áreas del gobierno.',
+              'Antes de que se conviertan en incidentes: eliminé un patrón N+1 en datasets geográficos pesados (con teselas vectoriales y caché en memoria) y detecté por iniciativa propia vulnerabilidades de seguridad que nadie había reportado.',
+              'Sumé un modo de accesibilidad pensado para adultos mayores, autenticación con SSO federado, y exportación a Excel/CSV/KML/GeoJSON.',
+            ],
+          },
+          {
+            name: 'Sistema de Gestión de Trabajadores Municipales (MBTA) y Portal de Comunicaciones',
+            tag: 'En paralelo',
+            bullets: [
+              'Reconstruí backend y frontend de los dos sistemas en simultáneo, migrando de PHP/Laravel a FastAPI + Vue.js sin cortar el servicio ni un solo día.',
+            ],
+          },
+          {
+            name: 'Sistema de Compras Electrónicas',
+            tag: null,
+            bullets: [
+              'Sumé estabilidad y performance a un sistema crítico de compras electrónicas que corre a escala de toda la ciudad.',
+            ],
+          },
+        ],
+      },
       timelineTitle: 'Formación',
       timeline: [
         {
@@ -42,7 +73,7 @@ export const translations = {
           title: 'Analista de Sistemas',
           place: 'Colegio Universitario IES',
           description:
-            'Formación técnica en desarrollo de software, bases de datos y arquitectura de sistemas. Proyecto de tesis: sistema de gestión full-stack para un negocio real ("La Porteña"), como Tech Lead de un equipo de 3 desarrolladores — asignación de tareas, revisión de código y planificación técnica, desde el modelo de datos hasta el deploy.',
+            'Formación técnica en desarrollo de software, bases de datos y arquitectura de sistemas. Proyecto de tesis: ERP / sistema de gestión full-stack para un negocio real de la industria alimenticia ("La Porteña"), desde el modelo de datos hasta el deploy.',
         },
         {
           period: '2019 — 2022',
@@ -72,9 +103,9 @@ export const translations = {
       items: {
         portenia: {
           name: 'La Porteña — Sistema de gestión',
-          tagline: 'Proyecto de tesis, full-stack para un negocio real',
+          tagline: 'Proyecto de tesis, ERP full-stack para un negocio real',
           description:
-            'Sistema de gestión completo desarrollado como proyecto de tesis para un negocio real: autenticación, generación de reportes en PDF/Excel y migración de un sistema legacy a una arquitectura moderna. Lideré un equipo de 3 desarrolladores.',
+            'ERP completo desarrollado como proyecto de tesis para un negocio real de la industria alimenticia: autenticación, generación de reportes en PDF/Excel y migración de un sistema legacy a una arquitectura moderna.',
         },
         yasta: {
           name: 'YASTA',
@@ -124,7 +155,7 @@ export const translations = {
     about: {
       title: 'About me',
       intro:
-        "I'm a Systems Analyst and Full Stack Developer focused on building complete systems: from database design to the final user experience. My thesis project was a real management system for a business, leading a team of 3 developers. Outside of code I follow football, Star Wars and Marvel closely — probably why my side projects keep turning into football apps without me planning it.",
+        "I'm a Full Stack Developer and Systems Analyst, backend at heart. Right now I'm Tech Lead of a team of 3 in the public sector, leading the development of a geospatial (GIS) platform for the Municipality of Córdoba. What I enjoy most about the job isn't just shipping features — it's catching the problem before it blows up: an unreported vulnerability, a bottleneck that would've taken down a production system, a ghost bug nobody else could find. Outside working hours I do the same thing for fun: I design and deploy my own projects end to end, like a complete ERP for a food industry business. I've also migrated entire legacy systems to modern architectures without ever cutting the service. Outside of code, football, Star Wars and Marvel take up the rest of my head.",
       skillsTitle: 'Tech stack',
       skills: {
         backend: { title: 'Backend', items: ['Python (FastAPI)', 'Node.js (Express)', 'PHP (Laravel)'] },
@@ -136,8 +167,39 @@ export const translations = {
           title: 'Architecture & practices',
           items: ['Legacy system migration', 'RESTful APIs', 'SOLID principles', 'Design patterns'],
         },
+        languages: { title: 'Languages', items: ['Spanish (native)', 'English (B1)'] },
       },
-      english: 'English — B1',
+      experienceTitle: 'Experience',
+      experience: {
+        role: 'Fullstack Developer → Tech Lead',
+        company: 'Municipality of Córdoba — Secretariat of Smart City & Digital Transformation',
+        period: '2024 — Present',
+        projects: [
+          {
+            name: 'Municipal Geoportal',
+            tag: 'Current project · Tech Lead of a 3-developer team',
+            bullets: [
+              "I designed and led it from scratch (Python/FastAPI + Vue 3/Quasar): today it's 190+ published layers and 103 REST endpoints across 14 modules, used by multiple government areas.",
+              'Before they turn into incidents: I eliminated an N+1 pattern on heavy geographic datasets (with vector tiles and in-memory caching) and proactively found security vulnerabilities nobody had reported.',
+              'Added an accessibility mode designed for senior citizens, federated SSO authentication, and export to Excel/CSV/KML/GeoJSON.',
+            ],
+          },
+          {
+            name: 'Municipal Workers Management System (MBTA) & Communications Portal',
+            tag: 'In parallel',
+            bullets: [
+              'Rebuilt the backend and frontend of both systems at the same time, migrating from PHP/Laravel to FastAPI + Vue.js without cutting the service for a single day.',
+            ],
+          },
+          {
+            name: 'Electronic Procurement System',
+            tag: null,
+            bullets: [
+              "Added stability and performance to a critical electronic procurement system running at city-wide scale.",
+            ],
+          },
+        ],
+      },
       timelineTitle: 'Education',
       timeline: [
         {
@@ -145,7 +207,7 @@ export const translations = {
           title: 'Systems Analyst',
           place: 'Colegio Universitario IES',
           description:
-            'Technical degree in software development, databases and systems architecture. Thesis project: full-stack management system for a real business ("La Porteña"), as Tech Lead of a 3-developer team — task assignment, code review and technical planning, from the data model to deployment.',
+            'Technical degree in software development, databases and systems architecture. Thesis project: full-stack ERP / management system for a real food industry business ("La Porteña"), from the data model to deployment.',
         },
         {
           period: '2019 — 2022',
@@ -175,9 +237,9 @@ export const translations = {
       items: {
         portenia: {
           name: 'La Porteña — Management System',
-          tagline: 'Thesis project, full-stack for a real business',
+          tagline: 'Thesis project, full-stack ERP for a real business',
           description:
-            'Complete management system built as a thesis project for a real business: authentication, PDF/Excel report generation, and migration from a legacy system to a modern architecture. Led a team of 3 developers.',
+            'Complete ERP built as a thesis project for a real food industry business: authentication, PDF/Excel report generation, and migration from a legacy system to a modern architecture.',
         },
         yasta: {
           name: 'YASTA',
