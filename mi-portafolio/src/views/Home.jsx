@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
+import { FiDownload } from 'react-icons/fi'
 import MainLayout from '../layouts/MainLayout'
 import { useLanguage } from '../context/LanguageContext'
+import { cvUrl } from '../data/cv'
 
 export default function Home() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
 
   return (
     <MainLayout>
@@ -37,6 +39,13 @@ export default function Home() {
           >
             {t('home.ctaContact')}
           </Link>
+          <a
+            href={cvUrl(lang)}
+            download
+            className="inline-flex items-center gap-1.5 px-2 py-2.5 text-sm font-medium text-slate-500 transition hover:text-pitch-600 dark:text-slate-400 dark:hover:text-pitch-400"
+          >
+            <FiDownload className="h-4 w-4" /> {t('home.downloadCv')}
+          </a>
         </div>
       </div>
     </MainLayout>

@@ -1,11 +1,21 @@
 import { useEffect, useRef } from 'react'
 
 const CLOUDS = [
-  { top: '18%', left: '12%', size: 42, color: '255, 90, 130', depth: 18, drift: [26, -18], duration: 22 },
-  { top: '55%', left: '78%', size: 46, color: '150, 100, 230', depth: 26, drift: [-22, 20], duration: 26 },
-  { top: '68%', left: '20%', size: 38, color: '80, 130, 220', depth: 14, drift: [18, 16], duration: 20 },
-  { top: '10%', left: '70%', size: 40, color: '255, 150, 80', depth: 22, drift: [-20, -14], duration: 24 },
-  { top: '38%', left: '48%', size: 34, color: '70, 190, 190', depth: 30, drift: [16, -20], duration: 18 },
+  { top: '18%', left: '12%', size: 58, color: '255, 60, 130', depth: 18, drift: [46, -34], duration: 13 },
+  { top: '55%', left: '78%', size: 64, color: '170, 70, 255', depth: 26, drift: [-40, 36], duration: 16 },
+  { top: '68%', left: '20%', size: 52, color: '50, 130, 255', depth: 14, drift: [34, 30], duration: 12 },
+  { top: '10%', left: '70%', size: 56, color: '255, 140, 40', depth: 22, drift: [-38, -26], duration: 15 },
+  { top: '38%', left: '48%', size: 48, color: '40, 220, 200', depth: 30, drift: [30, -38], duration: 10 },
+  { top: '82%', left: '55%', size: 50, color: '255, 45, 170', depth: 20, drift: [-28, -32], duration: 14 },
+]
+
+const LIGHT_CLOUDS = [
+  { top: '12%', left: '18%', size: 70, color: '34, 197, 94', drift: [46, -32], duration: 12 },
+  { top: '65%', left: '82%', size: 76, color: '250, 204, 21', drift: [-40, 34], duration: 15 },
+  { top: '75%', left: '15%', size: 64, color: '56, 189, 248', drift: [38, 30], duration: 11 },
+  { top: '30%', left: '55%', size: 60, color: '52, 211, 153', drift: [-32, -28], duration: 14 },
+  { top: '15%', left: '75%', size: 58, color: '244, 114, 182', drift: [-30, -24], duration: 13 },
+  { top: '85%', left: '48%', size: 54, color: '129, 140, 248', drift: [26, 28], duration: 16 },
 ]
 
 const STAR_LINK_RADIUS = 130
@@ -182,39 +192,70 @@ export default function NebulaBackground() {
   }, [])
 
   return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-0 hidden overflow-hidden dark:block"
-    >
+    <>
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 block overflow-hidden dark:hidden">
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(180deg, #f7fdf9 0%, #ffffff 45%, #f3fbf5 100%)' }}
+        />
+        <div className="absolute inset-0" style={{ animation: 'nebula-swirl 55s linear infinite' }}>
+          {LIGHT_CLOUDS.map((cloud, i) => (
+            <div key={i} className="absolute" style={{ top: cloud.top, left: cloud.left }}>
+              <div
+                style={{
+                  width: `${cloud.size}vmax`,
+                  height: `${cloud.size}vmax`,
+                  marginLeft: `-${cloud.size / 2}vmax`,
+                  marginTop: `-${cloud.size / 2}vmax`,
+                  borderRadius: '9999px',
+                  background: `radial-gradient(circle, rgba(${cloud.color}, 0.4) 0%, rgba(${cloud.color}, 0.16) 45%, rgba(${cloud.color}, 0) 72%)`,
+                  filter: 'blur(22px)',
+                  mixBlendMode: 'multiply',
+                  animation: `nebula-drift ${cloud.duration}s ease-in-out infinite`,
+                  '--drift-x': `${cloud.drift[0]}px`,
+                  '--drift-y': `${cloud.drift[1]}px`,
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-0 hidden overflow-hidden dark:block"
+      >
       <div
         className="absolute inset-0"
         style={{ background: 'radial-gradient(ellipse at center, #0c0916 0%, #030306 75%)' }}
       />
 
-      {CLOUDS.map((cloud, i) => (
-        <div
-          key={i}
-          ref={(el) => (cloudRefs.current[i] = el)}
-          className="absolute transition-transform duration-500 ease-out"
-          style={{ top: cloud.top, left: cloud.left }}
-        >
+      <div className="absolute inset-0" style={{ animation: 'nebula-swirl 70s linear infinite' }}>
+        {CLOUDS.map((cloud, i) => (
           <div
-            style={{
-              width: `${cloud.size}vmax`,
-              height: `${cloud.size}vmax`,
-              marginLeft: `-${cloud.size / 2}vmax`,
-              marginTop: `-${cloud.size / 2}vmax`,
-              borderRadius: '9999px',
-              background: `radial-gradient(circle, rgba(${cloud.color}, 0.4) 0%, rgba(${cloud.color}, 0.12) 45%, rgba(${cloud.color}, 0) 72%)`,
-              filter: 'blur(18px)',
-              mixBlendMode: 'screen',
-              animation: `nebula-drift ${cloud.duration}s ease-in-out infinite`,
-              '--drift-x': `${cloud.drift[0]}px`,
-              '--drift-y': `${cloud.drift[1]}px`,
-            }}
-          />
-        </div>
-      ))}
+            key={i}
+            ref={(el) => (cloudRefs.current[i] = el)}
+            className="absolute transition-transform duration-500 ease-out"
+            style={{ top: cloud.top, left: cloud.left }}
+          >
+            <div
+              style={{
+                width: `${cloud.size}vmax`,
+                height: `${cloud.size}vmax`,
+                marginLeft: `-${cloud.size / 2}vmax`,
+                marginTop: `-${cloud.size / 2}vmax`,
+                borderRadius: '9999px',
+                background: `radial-gradient(circle, rgba(${cloud.color}, 0.6) 0%, rgba(${cloud.color}, 0.2) 45%, rgba(${cloud.color}, 0) 72%)`,
+                filter: 'blur(20px)',
+                mixBlendMode: 'screen',
+                animation: `nebula-drift ${cloud.duration}s ease-in-out infinite`,
+                '--drift-x': `${cloud.drift[0]}px`,
+                '--drift-y': `${cloud.drift[1]}px`,
+              }}
+            />
+          </div>
+        ))}
+      </div>
 
       <div
         className="absolute inset-0"
@@ -225,6 +266,7 @@ export default function NebulaBackground() {
       />
 
       <canvas ref={canvasRef} className="absolute inset-0" />
-    </div>
+      </div>
+    </>
   )
 }
