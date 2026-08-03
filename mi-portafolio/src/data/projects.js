@@ -7,11 +7,6 @@ export const projects = [
     repoBackUrl: 'https://github.com/GastiSilva/porteniabackend',
     demoUrl: null,
     stack: ['Vue 3', 'Quasar', 'Pinia', 'Tailwind', 'Node.js', 'Express', 'Sequelize', 'PostgreSQL', 'JWT'],
-    stats: [
-      { key: 'backend', value: 5 },
-      { key: 'frontend', value: 4 },
-      { key: 'scale', value: 5 },
-    ],
   },
   {
     id: 'yasta',
@@ -20,11 +15,7 @@ export const projects = [
     repoUrl: 'https://github.com/GastiSilva/Futbols',
     demoUrl: 'https://listasfutbol-23089.web.app/grupos',
     stack: ['Vue 3', 'Quasar', 'Firebase', 'Pinia', 'PWA'],
-    stats: [
-      { key: 'frontend', value: 4 },
-      { key: 'realtime', value: 4 },
-      { key: 'pwa', value: 4 },
-    ],
+    images: ['projects/yasta/1.jpg', 'projects/yasta/2.jpg', 'projects/yasta/3.jpg', 'projects/yasta/4.jpg'],
   },
   {
     id: 'album',
@@ -33,10 +24,6 @@ export const projects = [
     repoUrl: 'https://github.com/GastiSilva/Album-panini2026',
     demoUrl: 'https://gastisilva.github.io/Album-panini2026/#/album',
     stack: ['Vue 3', 'Quasar', 'Firebase Firestore', 'vue-i18n', 'PWA'],
-    stats: [
-      { key: 'realtime', value: 5 },
-      { key: 'pwa', value: 5 },
-      { key: 'ux', value: 4 },
-    ],
+    images: ['projects/album/1.jpg', 'projects/album/2.jpg'],
   },
 ]

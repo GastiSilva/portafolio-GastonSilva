@@ -1,23 +1,6 @@
 import { FiGithub, FiExternalLink, FiLock } from 'react-icons/fi'
 import { useLanguage } from '../context/LanguageContext'
-
-function StatBar({ label, value }) {
-  return (
-    <div className="flex items-center gap-2 text-xs">
-      <span className="w-24 shrink-0 text-slate-500 dark:text-slate-400">{label}</span>
-      <div className="flex gap-1">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <span
-            key={i}
-            className={`h-2 w-4 rounded-sm ${
-              i < value ? 'bg-pitch-500' : 'bg-slate-200 dark:bg-ink-800'
-            }`}
-          />
-        ))}
-      </div>
-    </div>
-  )
-}
+import ProjectGallery from './ProjectGallery'
 
 export default function ProjectCard({ project }) {
   const { t } = useLanguage()
@@ -47,6 +30,13 @@ export default function ProjectCard({ project }) {
         </span>
       </div>
 
+      {project.images?.length > 0 && (
+        <ProjectGallery
+          images={project.images.map((src) => `${import.meta.env.BASE_URL}${src}`)}
+          alt={item.name}
+        />
+      )}
+
       <div className="flex flex-1 flex-col gap-4 p-5">
         <div>
           <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white">{item.name}</h3>
@@ -63,12 +53,6 @@ export default function ProjectCard({ project }) {
             >
               {tech}
             </span>
-          ))}
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          {project.stats.map((stat) => (
-            <StatBar key={stat.key} label={t(`projects.stats.${stat.key}`)} value={stat.value} />
           ))}
         </div>
 

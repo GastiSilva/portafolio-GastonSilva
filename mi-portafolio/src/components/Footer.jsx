@@ -1,10 +1,6 @@
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa'
-import { useLanguage } from '../context/LanguageContext'
 
 export default function Footer() {
-  const { t } = useLanguage()
-  const year = new Date().getFullYear()
-
   return (
     <footer>
       <div className="container mx-auto flex flex-col items-center gap-3 px-4 py-6">
@@ -35,9 +31,6 @@ export default function Footer() {
             <FaEnvelope />
           </a>
         </div>
-        <p className="text-xs text-slate-400 dark:text-slate-500">
-          © {year} Gastón Silva — {t('footer.rights')}
-        </p>
       </div>
     </footer>
   )

@@ -102,14 +102,6 @@ export const translations = {
       viewDemo: 'Ver demo',
       statusLive: 'Demo pública',
       statusPrivate: 'Cliente real · sin demo pública',
-      stats: {
-        backend: 'Backend',
-        frontend: 'Frontend',
-        scale: 'Escala',
-        realtime: 'Tiempo real',
-        pwa: 'PWA / Offline',
-        ux: 'UX',
-      },
       items: {
         portenia: {
           name: 'La Porteña — Sistema de gestión',
@@ -137,10 +129,6 @@ export const translations = {
       email: 'Email',
       linkedin: 'LinkedIn',
       github: 'GitHub',
-    },
-    footer: {
-      rights: 'Todos los derechos reservados.',
-      madeWith: 'Hecho con React + Tailwind.',
     },
   },
   en: {
@@ -246,14 +234,6 @@ export const translations = {
       viewDemo: 'View demo',
       statusLive: 'Public demo',
       statusPrivate: 'Real client · no public demo',
-      stats: {
-        backend: 'Backend',
-        frontend: 'Frontend',
-        scale: 'Scale',
-        realtime: 'Real-time',
-        pwa: 'PWA / Offline',
-        ux: 'UX',
-      },
       items: {
         portenia: {
           name: 'La Porteña — Management System',
@@ -281,10 +261,6 @@ export const translations = {
       email: 'Email',
       linkedin: 'LinkedIn',
       github: 'GitHub',
-    },
-    footer: {
-      rights: 'All rights reserved.',
-      madeWith: 'Built with React + Tailwind.',
     },
   },
 }
